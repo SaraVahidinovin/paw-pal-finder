@@ -16,7 +16,7 @@
 .header {
   width: 90%;
   height: 80px;
-  background: linear-gradient(to left, #f28621, #f3e3e3);
+  background: linear-gradient(to left, #66317A, #f3e3e3);
   padding: 1rem 3rem;
   display: grid;
   grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr 1fr 1fr;
@@ -24,17 +24,17 @@
   gap: 1rem;
 
   .logo {
-      height: 70px;
+      height: 3rem;
       align-self: baseline;
       grid-column: 1;
   }
 
   >*:nth-child(2) {
-      grid-column: 7;
+      grid-column: 4;
   }
 
   >*:nth-child(3) {
-      grid-column: 8;
+      grid-column: 5;
   }
 
   a {

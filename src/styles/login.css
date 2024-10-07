@@ -1,0 +1,31 @@
+
+.logo-container {
+    display: flex;
+    padding-left: 1rem;
+}
+
+.logo {
+    height: 6rem;
+    margin-right: 1rem; 
+}
+
+h1 {
+    text-align: center;
+    font-size: 4rem;
+    font-family: 'Miniver', cursive;
+    color: #333;
+
+}
+
+.login-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1rem;
+    gap: 1rem;
+}
+
+.login-info button {
+    border: none;
+    cursor: pointer;
+}

@@ -2,7 +2,7 @@ import { createContext, useState, ReactNode } from 'react';
 
 // Create the context
 
-const GlobalStateContext = createContext();
+const GlobalStateContext = createContext(null);
 
 
 // Create a provider 
