@@ -7,7 +7,7 @@ export default function Header() {
     const { isLoggedIn, logout } = useAuth(); // Use the auth context
 
     // Determine the css class name based on the current path. important for showing home page differently
-    const headerClass = location.pathname === "/" ? 'Homw-page-header' : 'header';
+    const headerClass = location.pathname === "/" ? 'Home-page-header' : 'header';
 
     return (
         <nav className={headerClass}>

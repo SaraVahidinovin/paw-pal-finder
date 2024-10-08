@@ -22,7 +22,7 @@ export default function LoginPage() {
         const user = users.find ((user:{username: string}) => user.username ===username);
 
         if (!user) {
-            setErrorMessage('User not found.');
+            setErrorMessage('User not found!');
             return;
         }
         if (user.password !== btoa(password)) {
@@ -40,23 +40,21 @@ export default function LoginPage() {
         <h2 className="form-title">Login</h2>
         <form onSubmit={handleSubmit}>
           <div className="field-container">
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username">Username:</label>
             <input
               name="username"
               id="username"
-              placeholder=""
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
             />
           </div>
           <div className="field-container">
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Password:</label>
             <input
               type="password"
               name="password"
               id="password"
-              placeholder=""
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required

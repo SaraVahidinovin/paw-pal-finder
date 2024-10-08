@@ -3,6 +3,7 @@ import App from "./App";
 import HomePage from "./pages/HomePage";
 import AllDogsPage from "./pages/AllDogsPage";
 import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 import AddDogPage from "./pages/AddDogPage";
 import MyDogsPage from "./pages/MydogsPage";
 import FavoritesPage from "./pages/FavoritesPage";
@@ -17,6 +18,7 @@ export const router = createBrowserRouter(
            <Route index element={<HomePage />} />
            <Route path='alldogs' element={<AllDogsPage />}/>
            <Route path='login' element={<LoginPage />}/>
+           <Route path='register' element={<RegisterPage />}/>
            <Route path='adddog' element={<AddDogPage />}/>
            <Route path='mydogs' element={<MyDogsPage/>}/>
            <Route path='favorites' element={<FavoritesPage />} />

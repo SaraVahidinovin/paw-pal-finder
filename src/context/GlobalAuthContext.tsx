@@ -18,7 +18,6 @@ export const useAuth = () => {
   return context;
 };
 
-// AuthProvider component to wrap around your app
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
