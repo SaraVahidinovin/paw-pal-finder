@@ -6,11 +6,12 @@ export default function HomePage() {
     const navigate = useNavigate(); 
 
     const handleClickAllDogs = () => {
-            navigate(`/cocktail/all-dogs`);
+            navigate(`/alldogs`);
     };
 
     return (
         <>
+        <button onClick={handleClickAllDogs}>Check them out</button>
         </>
     )
 }

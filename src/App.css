@@ -1,5 +1,5 @@
 #root {
-  width: 100vw;
+  width: 90vw;
   margin: 0 auto;
   text-align: center;
   display: flex;           
@@ -50,4 +50,73 @@
       font-weight: bold;
       color: var(--accent-red);
   }
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+/*product card*/
+.card {
+  background-color: #e5bebe;
+  padding: 2rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px (rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.card-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+/* Favourite icon */
+.favorite-icon {
+  margin: 0;
+  padding: 0.2rem;
+  background-color: transparent;
+  cursor: pointer;
+  align-self: self-end;
+}
+.favorite-icon svg {
+  font-size: 1.5rem;
+}
+button.favorite-icon {
+  margin: 0;
+  padding: 0.2rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  align-self: self-end;
+  outline: none;
+}
+button.favorite-icon:hover {
+  background-color: transparent;
+  border: none;
+}
+button.favorite-icon:hover:active {
+  background-color: transparent;
+}
+
+
+/* Remove focus outline when clicked or focused */
+button.favorite-icon:focus,
+button.favorite-icon:active {
+  outline: none;
+  border: none;
+  background-color: transparent;
 }

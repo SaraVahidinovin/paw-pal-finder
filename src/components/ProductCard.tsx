@@ -1,6 +1,7 @@
 import { Dog } from '../types';
 import GlobalStateContext from '../context/GlobalStateContext';
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function ProductCard({ dog }: { dog: Dog }) {
     // Destructure the global context to use the setFavorites function
@@ -29,8 +30,16 @@ export default function ProductCard({ dog }: { dog: Dog }) {
         }
     }
 
+    // Hook to programmatically navigate between routes
+    const navigate = useNavigate();
+
+    const handleClick = (dog: Dog) => {
+        // Navigate to the details page using the dog's chipNumber
+        navigate(`/dog/${dog.chipNumber}`);
+    };
+
     return (
-        <article className="product-card">
+        <article className="product-card" onClick={() => handleClick(dog)} style={{ cursor: 'pointer' }}>
             <button className="favorite-icon" onClick={handleFavoriteClick}
              style={{ color: isFavorite ? 'red' : 'white' }}
             >

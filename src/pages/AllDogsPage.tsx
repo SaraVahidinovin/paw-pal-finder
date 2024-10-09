@@ -6,9 +6,6 @@ import ProductCard from '../components/ProductCard';
 export default function AllDogsPage() {
     const dogs = useLoaderData() as Dog[];
 
-    // Hook to handle navigation
-    const navigate = useNavigate(); 
-
     return (
         <>
             <div>
@@ -17,7 +14,6 @@ export default function AllDogsPage() {
                     {dogs.map((dog, index) => (
                         <section
                         key={index}
-                        style={{ cursor: "pointer" }}
                     >
                         <ProductCard dog={dog} />
                     </section>
