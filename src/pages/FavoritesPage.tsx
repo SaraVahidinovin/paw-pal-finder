@@ -13,20 +13,20 @@ export default function FavoritesPage() {
     const navigate = useNavigate();
 
     // Function to handle clicking on a card
-    const handleCocktailClick = (dog: Dog) => {
+    const handleClick = (dog: Dog) => {
         // Navigate to the details page using the dog's chipNumber
-        navigate(`/dog/${favorites.chipNumber}`);
+        navigate(`/dog/${dog.chipNumber}`);
     };
 
     return (
         <section className="main-content-container">
-            <h2>Your Favorite Cocktails</h2>
+            <h2>Dogs You've Fallen For</h2>
             <section className="card-container">
                 {/* Check if there are any favorite dogs */}
                 {favorites.length > 0 ?
                     // If there are favorites, map over the array and display each as a ProductCard component
                     (favorites.map((dog, index) => (
-                        <section key={index} className="favorite-item" onClick={() => handleCocktailClick(dog)} style={{ cursor: 'pointer' }}>
+                        <section key={index} className="favorite-item" onClick={() => handleClick(dog)} style={{ cursor: 'pointer' }}>
                             <ProductCard dog={dog} />
                         </section>
                     ))
