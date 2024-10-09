@@ -11,12 +11,13 @@ import DogInfoPage from "./pages/DogInfoPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import { dogsLoader } from "./loader/loader";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={<App />}>
            <Route index element={<HomePage />} />
-           <Route path='alldogs' element={<AllDogsPage />}/>
+           <Route path='alldogs' element={<AllDogsPage />} loader={dogsLoader}/>
            <Route path='login' element={<LoginPage />}/>
            <Route path='register' element={<RegisterPage />}/>
            <Route path='adddog' element={<AddDogPage />}/>
