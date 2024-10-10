@@ -35,7 +35,7 @@ export default function ProductCard({ dog }: { dog: Dog }) {
 
     const handleClick = (dog: Dog) => {
         // Navigate to the details page using the dog's chipNumber
-        navigate(`/dog/${dog.chipNumber}`);
+        navigate(`/dogInfo/${dog.chipNumber}`, { state: { dog } });
     };
 
     return (
