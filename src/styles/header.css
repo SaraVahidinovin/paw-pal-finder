@@ -1,0 +1,51 @@
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+  .logo {
+    height: 3rem;
+    align-self: baseline;
+}
+
+.menu-container {
+
+    padding: 0 0.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        color: rgba(0, 0, 0, 0.8);
+        text-decoration: none;
+        padding: 0.5rem;
+        /* -webkit-text-stroke: 0.1px #FFD700;  Yellow stroke around text */
+        font-size: 1.2rem;
+    }
+  
+    a:hover {
+        color: antiquewhite;
+    }
+  
+    .active-link {
+        font-weight: bold;
+        color: #FFD700;
+    }
+
+    .logout-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+
+        img {
+            width: 3.5rem;
+        }
+    }
+}
+
