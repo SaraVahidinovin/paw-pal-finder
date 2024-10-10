@@ -1,0 +1,9 @@
+.header-container {
+    background: linear-gradient(180deg, 
+    rgba(204, 17, 102, 0.30) 0%,   /* CC1166 with 30% opacity */
+    rgba(121, 14, 70, 0.63) 70%,   /* 790E46 with 63% opacity */
+    rgba(25, 11, 34, 0.8) 100%       /* 190B22 with 100% opacity */
+  );
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
