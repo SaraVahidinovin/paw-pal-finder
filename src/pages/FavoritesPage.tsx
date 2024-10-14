@@ -1,6 +1,8 @@
 import { useContext } from "react"
 import GlobalStateContext from "../context/GlobalStateContext"
 import ProductCard from "../components/ProductCard";
+import Header from '../components/Header';
+import '../styles/favoritePage.css'
 
 export default function FavoritesPage() {
 
@@ -8,8 +10,11 @@ export default function FavoritesPage() {
     const { favorites } = useContext(GlobalStateContext);
 
     return (
-        <section className="main-content-container">
-            <h2>Dogs You've Fallen For</h2>
+        <section className="favorites-container">
+            <section className="header-container">
+                <Header />
+            </section>
+            <h1>Dogs You've Fallen For</h1>
             <section className="card-container">
                 {/* Check if there are any favorite dogs */}
                 {favorites.length > 0 ?
