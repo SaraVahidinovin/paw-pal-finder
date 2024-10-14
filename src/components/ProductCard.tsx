@@ -2,6 +2,11 @@ import { Dog } from '../types';
 import GlobalStateContext from '../context/GlobalStateContext';
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../styles/productCard.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons'; 
+import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons';
+
 
 export default function ProductCard({ dog }: { dog: Dog }) {
     // Destructure the global context to use the setFavorites function
@@ -17,7 +22,7 @@ export default function ProductCard({ dog }: { dog: Dog }) {
 
     // Remove the current dog from the favorites list
     function removeFavorite() {
-        setFavorites(favorites.filter(favorite => favorite.chipNumber !== favorite.chipNumber));
+        setFavorites(favorites.filter(favorite => favorite.chipNumber !== dog.chipNumber));
     }
 
     // Toggle between adding and removing the dog from favorites
@@ -40,17 +45,18 @@ export default function ProductCard({ dog }: { dog: Dog }) {
 
     return (
         <article className="product-card" onClick={() => handleClick(dog)} style={{ cursor: 'pointer' }}>
-            <button className="favorite-icon" onClick={handleFavoriteClick}
-             style={{ color: isFavorite ? 'red' : 'white' }}
-            >
-            ❤️
-            </button>
-            <img src={dog.img} alt={dog.name} className="card-image" />
+            <div className="img-wrapper">
+                <button className="favorite-icon" onClick={handleFavoriteClick}
+                    style={{ color: isFavorite ? 'red' : 'white' }}>
+                    <FontAwesomeIcon icon={isFavorite ? faHeartSolid : faHeartRegular} />
+                </button>
+                <img src={dog.img} alt={dog.name} className="card-image" />
+            </div>
             <section className="card-content">
                 <h3 className="name">{dog.name}</h3>
-                <span className="gender">{dog.sex}</span>
-                <span className="breed">{dog.breed}</span>
-                <span className="age">{dog.age}years old</span>
+                <h3 className="gender">{dog.sex}</h3>
+                <h3 className="breed">{dog.breed}</h3>
+                <h3 className="age">{dog.age} years old</h3>
             </section>
         </article>
     )
