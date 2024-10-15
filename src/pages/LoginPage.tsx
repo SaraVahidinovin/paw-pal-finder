@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useNavigate } from 'react-router-dom';
 import '../styles/login.css'
 import { useAuth } from "../context/GlobalAuthContext";
+import Header from "../components/Header";
 
 export default function LoginPage() {
     const [username, setUsername] = useState("");
@@ -36,6 +37,9 @@ export default function LoginPage() {
     }
 
     return (
+      <>
+      <Header />
+      <section className="login-page-container">
         <section className="form-container">
         <h2 className="form-title">Login</h2>
         <form onSubmit={handleSubmit}>
@@ -67,5 +71,14 @@ export default function LoginPage() {
           Don't have an account? <a href="/register">Sign up here</a>
         </p>
       </section>
+      <section className="login-banner">
+                <img src="../assets/login.png" alt="Dog with sunglasses" className="login-banner-image" />
+                <div className="login-banner-text">
+                    <h3>Join our community and help dogs find their forever homes.</h3>
+                </div>
+            </section>
+      </section>
+      </>
+
     )
 }
