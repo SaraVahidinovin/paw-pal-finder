@@ -1,43 +1,14 @@
 import { Dog } from '../types';
-import GlobalStateContext from '../context/GlobalStateContext';
-import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/productCard.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons'; 
-import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons';
+import FavoriteButton from './FavoriteButton';
 
 interface ProductCardProps {
     dog: Dog;
-    isUserDog: boolean;  // Prop to determine if the dog belongs to the logged-in user
+    isUserDog?: boolean;  // Prop to determine if the dog belongs to the logged-in user
 }
 
 export default function ProductCard({ dog, isUserDog }: ProductCardProps) {
-    // Destructure the global context to use the setFavorites function
-    const { favorites, setFavorites } = useContext(GlobalStateContext);
-
-    // Check if the current dog is already in the list of favorites
-    const isFavorite = favorites.some(favorite => favorite.chipNumber === dog.chipNumber);
-
-    // Add the current dog to the favorites list
-    function addFavorite() {
-        setFavorites([...favorites, dog]);
-    }
-
-    // Remove the current dog from the favorites list
-    function removeFavorite() {
-        setFavorites(favorites.filter(favorite => favorite.chipNumber !== dog.chipNumber));
-    }
-
-    // Toggle between adding and removing the dog from favorites
-    function handleFavoriteClick(e: React.MouseEvent<HTMLButtonElement>) {
-        e.stopPropagation();  // Prevent event from bubbling up
-        if (isFavorite) {
-            removeFavorite();  // If already a favorite, remove it
-        } else {
-            addFavorite();     // If not a favorite, add it
-        }
-    }
 
     const handleDelete = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
@@ -72,7 +43,7 @@ export default function ProductCard({ dog, isUserDog }: ProductCardProps) {
     const handleEdit = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
         // Navigate to the edit page 
-        navigate(`/editDog/${dog.id}`, { state: { dog } });
+        navigate(`/editDog/${dog.id}`, { state: { mode: 'edit', dog } });
     };
 
     const handleClick = (dog: Dog) => {
@@ -83,10 +54,7 @@ export default function ProductCard({ dog, isUserDog }: ProductCardProps) {
     return (
         <article className="product-card" onClick={() => handleClick(dog)} style={{ cursor: 'pointer' }}>
             <div className="img-wrapper">
-                <button className="favorite-icon" onClick={handleFavoriteClick}
-                    style={{ color: isFavorite ? 'red' : 'white' }}>
-                    <FontAwesomeIcon icon={isFavorite ? faHeartSolid : faHeartRegular} />
-                </button>
+                <FavoriteButton dog={dog} />
                 <img src={dog.img} alt={dog.name} className="card-image" />
             </div>
             <section className="card-content">
