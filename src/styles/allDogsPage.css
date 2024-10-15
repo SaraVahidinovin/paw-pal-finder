@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansation:wght@400;700&family=Sansita:wght@400;700&display=swap');
+
 .header-container {
     background: linear-gradient(180deg, 
     rgba(204, 17, 102, 0.30) 0%,   /* CC1166 with 30% opacity */
@@ -6,4 +8,10 @@
   );
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
+}
+
+h1 {
+    font-family: 'Sansita', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
 }
