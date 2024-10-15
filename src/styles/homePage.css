@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansation:wght@400;700&family=Sansita:wght@400;700&display=swap');
+
 .home-container {
   display: flex;
   flex-direction: column;
@@ -8,7 +10,7 @@
   height: 90vh;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
-  font-family: sansation;  
+  font-family: 'Sansation', sans-serif;
   background: linear-gradient(180deg, 
   rgba(204, 17, 102, 0.30) 0%,   /* CC1166 with 30% opacity */
   rgba(121, 14, 70, 0.63) 50%,   /* 790E46 with 63% opacity */
