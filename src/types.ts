@@ -11,4 +11,6 @@ export interface Dog {
     lastName: string;
     phoneNumber: string;
   };
+  id: string;
+  addedBy?: string;
 }
