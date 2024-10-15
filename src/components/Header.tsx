@@ -30,7 +30,7 @@ export default function Header() {
                     // If not logged in, show login
                     <NavLink
                         to="/login"
-                        className={({ isActive }) => isActive ? 'active-link' : ''}
+                        className="login-button"
                     >
                         Login
                     </NavLink>
