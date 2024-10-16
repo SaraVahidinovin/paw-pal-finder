@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansation:wght@400;700&family=Sansita:wght@400;700&display=swap');
+
+.add-dog-form, .edit-dog-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8);
+    width: 80%;
+    background: linear-gradient(180deg,
+    rgba(204, 17, 102, 0.30) 0%,
+    /* CC1166 with 30% opacity */
+    rgba(121, 14, 70, 0.63) 50%,
+    /* 790E46 with 63% opacity */
+    rgba(25, 11, 34, 1) 100%
+    /* 190B22 with 100% opacity */
+    );
+    font-family: 'Sansita', sans-serif;
+    align-self: center;
+    padding: 0;
+    color: black;
+
+    .dog-info {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: start;
+        width: 100%;
+    }
+    
+   .image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 0 2rem 0;
+        
+    } 
+    .file-input {
+        display: none;  /* Hide the file input */
+    }
+
+    .image-container {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        border-radius: 15px;
+        border: 1rem solid #D9D9D9;
+    }
+
+    .icon-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5); 
+        border-radius: 8px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .image-container:hover .icon-overlay {
+        opacity: 1;
+    }
+
+    .change-icon {
+        color: #fff;
+        transition: transform 0.3s ease;
+    }
+
+    .image-container:hover .change-icon {
+        transform: scale(1.2); 
+    }
+
+    .icon-placeholder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+        height: 250px;
+        background-color: rgba(246, 243, 247, 0.5);
+        border: 2px dashed #ccc;
+        border-radius: 8px;
+        transition: border-color 0.3s ease, background-color 0.3s ease;
+    }
+    
+    .icon-placeholder:hover {
+        border-color: #666;
+        background-color: #f0f0f0;
+    }
+    
+    .upload-icon {
+        color: #888;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .icon-placeholder:hover .upload-icon {
+        color: #000;
+        transform: scale(1.2);
+    }
+    
+    .dog-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .info-sections {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        justify-content: space-around;
+        width: 100%;
+        padding-right: 1.4rem;
+    
+        .dog-info-section,
+        .owner-info-section {
+            padding: 1.2rem;
+            padding-bottom: 0;
+        }
+    
+    }
+    
+    h3 {
+        padding: 1rem;
+        font-weight: bold;
+        background-color: rgba(246, 243, 247, 0.8);
+        border: 1px solid white;
+        border-radius: 10px;
+        font-size: 1.5rem;
+    }
+    
+    .info-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 1rem 0;            
+        background-color: rgba(246, 243, 247, 0.5);
+        border: 1px solid white;
+        border-radius: 10px;
+        padding-top: 0;
+    }
+    
+    .label {
+        font-weight: bold;
+        margin-right: 1rem;             
+        text-align: start;
+    }
+    
+    input, select {
+        text-align: start;
+        border: none;
+        border-top-right-radius:10px ;
+        border-bottom-right-radius: 10px;
+        background-color: rgba(246, 243, 247, 0.5);
+        padding-left: 0.5rem;
+        box-sizing: border-box;
+        width: 100%;             
+    }
+
+    select {
+        padding-left: 1rem;
+    }
+
+    p {
+        padding: 0.3rem;
+        margin-top: 0;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #66317A;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1.1em;
+        align-self: center;
+        border: 1px solid white;
+        align-self: end;
+        margin-right: 2.4rem;
+        margin-bottom: 1rem;
+        margin-top: 0;
+    }
+}
