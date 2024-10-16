@@ -58,7 +58,7 @@
   border-radius: 8px;
   cursor: pointer;
   font-size: 1.1em;
-  -webkit-text-stroke: 0.5px #FFD700; /* Yellow stroke around text */
+  -webkit-text-stroke: 0.2px #FFD700; /* Yellow stroke around text */
   align-self: center;
 }
 
