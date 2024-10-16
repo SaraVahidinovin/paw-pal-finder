@@ -1,9 +1,10 @@
 import { useLoaderData, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/GlobalAuthContext';
 import { Dog } from '../types';
 import ProductCard from '../components/ProductCard';
-import { dogsLoader } from '../loader/loader';
 import Header from '../components/Header';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import '../styles/myDogsPage.css'
 
 export default function MyDogsPage() {
     const dogs = useLoaderData() as Dog[];
@@ -26,7 +27,9 @@ export default function MyDogsPage() {
         </section>
         <section className="my-dogs-content">
             <h1>Your Dogs Awaiting New Homes</h1>
-            <button onClick={handleNavigation}>Add</button>
+            <button onClick={handleNavigation} title='Add a new dog' className='add-button'>
+                <FontAwesomeIcon icon={faPlus} />
+            </button>
             {userDogs.length === 0 ? (
                 <p>You have not added any dogs yet.</p>
             ) : (
@@ -35,7 +38,7 @@ export default function MyDogsPage() {
                         <ProductCard 
                             key={dog.chipNumber} 
                             dog={dog} 
-                            isUserDog={true}  // Show edit and delete options only for user’s dogs
+                            isUserDog={true}  // To show edit and delete options only for user’s dogs
                         />
                     ))}
                 </section>
