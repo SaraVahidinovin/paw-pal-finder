@@ -20,8 +20,9 @@ export const router = createBrowserRouter(
            <Route path='alldogs' element={<AllDogsPage />} loader={dogsLoader}/>
            <Route path='login' element={<LoginPage />}/>
            <Route path='register' element={<RegisterPage />}/>
-           <Route path='adddog' element={<AddDogPage />}/>
-           <Route path='mydogs' element={<MyDogsPage/>}/>
+           <Route path='adddog' element={<AddDogPage mode= "create"/>}/>
+           <Route path='editDog/:id' element={<AddDogPage mode= "edit"/>}/>
+           <Route path='mydogs' element={<MyDogsPage/>} loader={dogsLoader}/>
            <Route path='favorites' element={<FavoritesPage />} />
            <Route path='dogInfo/:chipNumber' element={<DogInfoPage />} />
            <Route path='about' element={<AboutPage />} />
