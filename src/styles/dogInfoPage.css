@@ -11,43 +11,95 @@
     align-items: center;
 }
 
-.dog-info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    background-color: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 80%;
-}
-
-.dog-image {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 15px;
-}
-
 h2{
     padding: 1rem;
+    margin-bottom: 0;
 }
 
-h3{
-    padding: 1rem;
-    font-weight: bold;
-}
-
-p{
-    padding: 0.5rem;
-}
-
-.info-sections {
+.dog-card {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
-    width: 100%;
-}
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8);
+    width: 80%;
+    background: linear-gradient(180deg,
+            rgba(204, 17, 102, 0.30) 0%,
+            /* CC1166 with 30% opacity */
+            rgba(121, 14, 70, 0.63) 50%,
+            /* 790E46 with 63% opacity */
+            rgba(25, 11, 34, 1) 100%
+            /* 190B22 with 100% opacity */
+        );
+    position: relative;
 
-.dog-info-section, .owner-info-section {
-    padding: 0 20px;
+    .dog-info {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: start;
+        width: 100%;
+    }
+
+    .image-wrapper {
+        padding: 1.5rem 0;
+        border-radius: 10px;
+
+        .dog-image {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 1rem solid #D9D9D9;
+        }
+    }
+
+    .info-sections {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        justify-content: space-around;
+        width: 100%;
+        padding-right: 1.4rem;
+
+        .dog-info-section,
+        .owner-info-section {
+            padding: 1.2rem;
+        }
+
+    }
+
+    h3 {
+        padding: 1rem;
+        font-weight: bold;
+        background-color: rgba(246, 243, 247, 0.8);
+        border: 1px solid white;
+        border-radius: 10px;
+        font-size: 1.5rem;
+    }
+
+    .info-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 1rem 0;           
+        background-color: rgba(246, 243, 247, 0.5);
+        border: 1px solid white;
+        border-radius: 10px;
+        padding-top: 0;
+    }
+    
+    .label {
+        font-weight: bold;
+        margin-right: 1rem;             
+        text-align: start;
+    }
+    
+    .value {
+        text-align: start;              
+    }
+    
+    p {
+        padding: 0.3rem;
+        margin-top: 0;
+    }
 }
