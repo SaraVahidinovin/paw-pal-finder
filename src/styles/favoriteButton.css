@@ -1,0 +1,13 @@
+.favorite-icon {
+    margin: 0;
+    padding: 0.2rem;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(102, 49, 122, 0.5);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 30%;
+    border: 1px solid white;
+}
