@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansation:wght@400;700&family=Sansita:wght@400;700&display=swap');
+
+.add-dog-container {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Sansita', sans-serif;
+}
