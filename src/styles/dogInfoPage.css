@@ -32,6 +32,7 @@ h2{
             rgba(25, 11, 34, 1) 100%
             /* 190B22 with 100% opacity */
         );
+    background-color: #8a2be2;
     position: relative;
 
     .dog-info {
