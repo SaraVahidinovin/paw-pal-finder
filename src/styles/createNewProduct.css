@@ -10,12 +10,10 @@
     width: 80%;
     background: linear-gradient(180deg,
     rgba(204, 17, 102, 0.30) 0%,
-    /* CC1166 with 30% opacity */
     rgba(121, 14, 70, 0.63) 50%,
-    /* 790E46 with 63% opacity */
     rgba(25, 11, 34, 1) 100%
-    /* 190B22 with 100% opacity */
     );
+    background-color: #8a2be2;
     font-family: 'Sansita', sans-serif;
     align-self: center;
     padding: 0;
