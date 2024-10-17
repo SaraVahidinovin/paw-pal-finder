@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import '../styles/login.css'
+import Header from "../components/Header";
+import bannerBackground from '../assets/bannerBackground.svg';
+import dogWearingSunglasses from '../assets/dog-wearing-sunglasses.svg';
 
 export default function RegisterPage() {
     const [name, setName] = useState("");
@@ -72,8 +75,10 @@ export default function RegisterPage() {
     };
 
     return (
+        <section className="login-page-container">
+        <section className="login-content">
         <section className="form-container">
-            <h2 className="form-title">Register your account</h2>
+            <h2 className="form-title">Register</h2>
             <form onSubmit={handleSubmit} id="registration-form">
                 <div className="field-container">
                 <label htmlFor="name">Name:</label>
@@ -125,12 +130,23 @@ export default function RegisterPage() {
                         required
                     />
                 </div>
-                <button type="submit">Sign up</button>
+                <button type="submit" className="login-page-button">Sign up</button>
             </form>
             {errorMessage && <p id="error-msg">{errorMessage}</p>}
             <p>
-                Already have an account? <a href="/login">Login here</a>
+                Already have an account? <a href="/login">Login here!</a>
             </p>
         </section>
+        <section className="login-banner">
+                <img src={bannerBackground}  className="banner-background" />
+                <section className="banner-image-container">
+                <img src={dogWearingSunglasses}  className="banner-image" />
+                <div className="banner-text">
+                    <h3>Join our community and help dogs find their forever homes.</h3>
+                </div>
+                </section>
+            </section>
+      </section>
+      </section>
     );
 }
