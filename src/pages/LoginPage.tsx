@@ -3,6 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/login.css'
 import { useAuth } from "../context/GlobalAuthContext";
 import Header from "../components/Header";
+import bannerBackground from '../assets/bannerBackground.svg';
+import dogWearingSunglasses from '../assets/dog-wearing-sunglasses.svg';
+
 
 export default function LoginPage() {
     const [username, setUsername] = useState("");
@@ -37,9 +40,8 @@ export default function LoginPage() {
     }
 
     return (
-      <>
-      <Header />
       <section className="login-page-container">
+      <section className="login-content">
         <section className="form-container">
         <h2 className="form-title">Login</h2>
         <form onSubmit={handleSubmit}>
@@ -64,21 +66,23 @@ export default function LoginPage() {
               required
             />
           </div>
-          <button type="submit">Login</button>
+          <button type="submit" className="login-page-button">Login</button>
         </form>
         {errorMessage && <p id="error-msg">{errorMessage}</p>}
         <p>
-          Don't have an account? <a href="/register">Sign up here</a>
+          Don't have an account? <a href="/register">Register here!</a>
         </p>
       </section>
       <section className="login-banner">
-                <img src="../assets/login.png" alt="Dog with sunglasses" className="login-banner-image" />
-                <div className="login-banner-text">
+                <img src={bannerBackground}  className="banner-background" />
+                <section className="banner-image-container">
+                <img src={dogWearingSunglasses}  className="banner-image" />
+                <div className="banner-text">
                     <h3>Join our community and help dogs find their forever homes.</h3>
                 </div>
+                </section>
             </section>
       </section>
-      </>
-
+      </section>
     )
 }
