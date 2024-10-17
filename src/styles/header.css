@@ -23,7 +23,7 @@ nav {
     align-items: center;
 
     a {
-        color: rgba(0, 0, 0, 0.8);
+        color: white;
         text-decoration: none;
         padding: 0.5rem;
         /*-webkit-text-stroke: 0.2px #FFD700; /* Yellow stroke around text */
