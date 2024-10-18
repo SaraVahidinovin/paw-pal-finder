@@ -1,6 +1,6 @@
 import Header from '../components/Header';
 import DogForm from '../components/CreateNewProduct';
-import '../styles/addEditDog.css'
+import '../styles/addDogPage.css'
 
 interface AddDogPageProps {
     mode: "create" | "edit"
