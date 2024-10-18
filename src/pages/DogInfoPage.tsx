@@ -38,7 +38,7 @@ export default function DogInfoPage() {
                                 </div>
                                 <div className="info-item">
                                     <p className="label"><strong>Age:</strong></p>
-                                    <p className="value">{dog.age} years old</p>
+                                    <p className="value">{dog.age} months old</p>
                                 </div>
                             </section>
                             <section className="owner-info-section">
