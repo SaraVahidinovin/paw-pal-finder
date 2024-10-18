@@ -2,6 +2,8 @@ import { Dog } from '../types';
 import { useNavigate } from 'react-router-dom';
 import '../styles/productCard.css'
 import FavoriteButton from './FavoriteButton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 interface ProductCardProps {
     dog: Dog;
@@ -25,8 +27,6 @@ export default function ProductCard({ dog, isUserDog }: ProductCardProps) {
                 method: 'DELETE',
             });
             if (response.ok) {
-                alert('Dog deleted successfully!');
-
                 // Navigate to MyDogsPage and trigger the page reload
                 navigate('/mydogs', { replace: true });
             } else {
@@ -56,19 +56,19 @@ export default function ProductCard({ dog, isUserDog }: ProductCardProps) {
             <div className="img-wrapper">
                 <FavoriteButton dog={dog} />
                 <img src={dog.img} alt={dog.name} className="card-image" />
+                {isUserDog && (
+                    <div className="action-icons">
+                        <FontAwesomeIcon icon={faEdit} className="icon edit-icon" onClick={handleEdit} title='Edit item'/>
+                        <FontAwesomeIcon icon={faTrash} className="icon delete-icon" onClick={handleDelete} title='Delete item' />
+                    </div>
+                )}
             </div>
             <section className="card-content">
                 <h3 className="name">{dog.name}</h3>
                 <h3 className="gender">{dog.sex}</h3>
                 <h3 className="breed">{dog.breed}</h3>
-                <h3 className="age">{dog.age} years old</h3>
+                <h3 className="age">{dog.age} months old</h3>
             </section>
-            {isUserDog && (
-                <section className="dog-actions">
-                    <button onClick={handleEdit}>Edit</button>
-                    <button onClick={handleDelete}>Delete</button>
-                </section>
-            )}
         </article>
     )
 }
