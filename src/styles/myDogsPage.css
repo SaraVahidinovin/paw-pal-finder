@@ -11,11 +11,12 @@
         transition: transform 0.3s ease;
         color: white;
         font-size: 1.5rem;
+        border-radius: 10px;
+        cursor: pointer;
     }
 
-    button:hover {
+    .add-button:hover {
         transform: scale(1.1);
-
     }
 
     p {
