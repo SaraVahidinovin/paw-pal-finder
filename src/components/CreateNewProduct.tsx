@@ -130,7 +130,8 @@ const DogForm = ({ mode }: DogFormProps) => {
     };
 
     // Trigger file input when the icon is clicked
-    const handleIconClick = () => {
+    const handleIconClick = (e: React.ChangeEvent<HTMLInputElement>) => {
+        e.stopPropagation()
         if (fileInputRef.current) {
             fileInputRef.current.click();
         }
@@ -146,6 +147,8 @@ const DogForm = ({ mode }: DogFormProps) => {
                         className='file-input'
                         ref={fileInputRef}
                         onChange={handleFileChange}
+                        style={{ display: 'none' }}
+                        required
                     />
                     {/* Image preview or upload icon */}
                     <div className="image-preview" onClick={handleIconClick}>
@@ -173,11 +176,11 @@ const DogForm = ({ mode }: DogFormProps) => {
                         <h3>Dog Information</h3>
                         <div className="info-item">
                             <p className="label"><strong>Name:</strong></p>
-                            <input type="text" name="name" value={formData.name} onChange={handleChange} />
+                            <input type="text" name="name" value={formData.name} onChange={handleChange} required />
                         </div>
                         <div className="info-item">
                             <p className="label"><strong>Breed:</strong></p>
-                            <input type="text" name="breed" value={formData.breed} onChange={handleChange} />
+                            <input type="text" name="breed" value={formData.breed} onChange={handleChange} required/>
                         </div>
                         <div className="info-item">
                             <p className="label"><strong>Gender:</strong></p>
@@ -188,26 +191,26 @@ const DogForm = ({ mode }: DogFormProps) => {
                         </div>
                         <div className="info-item">
                             <p className="label"><strong>Age:</strong></p>
-                            <input type="number" name="age" value={formData.age} onChange={handleChange} />
+                            <input type="number" name="age" value={formData.age} onChange={handleChange} required />
                         </div>
                         <div className="info-item">
                             <p className="label"><strong>Chip Number:</strong></p>
-                            <input type="text" name="chipNumber" value={formData.chipNumber} onChange={handleChange} />
+                            <input type="text" name="chipNumber" value={formData.chipNumber} onChange={handleChange} required/>
                         </div>
                     </section>
                     <section className="owner-info-section">
                         <h3>Owner Information</h3>
                         <div className="info-item">
                             <p className="label"><strong>Name:</strong></p>
-                            <input type="text" name="owner.name" value={formData.owner.name} onChange={handleChange} />
+                            <input type="text" name="owner.name" value={formData.owner.name} onChange={handleChange} required />
                         </div>
                         <div className="info-item">
                             <p className="label"><strong>Last Name:</strong></p>
-                            <input type="text" name="owner.lastName" value={formData.owner.lastName} onChange={handleChange} />
+                            <input type="text" name="owner.lastName" value={formData.owner.lastName} onChange={handleChange} required/>
                         </div>
                         <div className="info-item">
                             <p className="label"><strong>Phone Number:</strong></p>
-                            <input type="text" name="owner.phoneNumber" value={formData.owner.phoneNumber} onChange={handleChange} />
+                            <input type="text" name="owner.phoneNumber" value={formData.owner.phoneNumber} onChange={handleChange} required />
                         </div>
                     </section>
                 </section>
