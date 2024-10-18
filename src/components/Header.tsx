@@ -2,7 +2,8 @@ import { NavLink, useLocation } from "react-router-dom";
 import logo from '../assets/logo.png'
 import { useAuth } from "../context/GlobalAuthContext";
 import '../styles/header.css'
-import Logout from '../assets/Logout.svg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 export default function Header() {
     const location = useLocation(); //  the current route location
@@ -60,7 +61,7 @@ export default function Header() {
                             className="logout-button"
                             title="Logout"
                         >
-                            <img src={Logout} alt="Logout"></img>
+                            <FontAwesomeIcon icon={faSignOutAlt} />
                         </button>
                     </>
                 )}
