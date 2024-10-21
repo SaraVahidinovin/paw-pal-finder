@@ -11,8 +11,24 @@
   border-bottom-right-radius: 25px;
 }
 
-h1 {
-    font-family: 'Sansita', sans-serif;
-    font-size: 2rem;
-    font-weight: bold;
+.all-dogs-container {
+  display: flex;
+  flex-direction: column;
+    h1 {
+      font-family: 'Sansita', sans-serif;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    
+    .search-card-container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+    }
+
+    p {
+      font-family: 'Sansita', sans-serif;
+      text-align: center;
+    }
+
 }
