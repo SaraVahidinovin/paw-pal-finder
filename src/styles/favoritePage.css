@@ -5,3 +5,12 @@ h1 {
     font-size: 2rem;
     font-weight: bold;
 }
+
+.favorites-container {
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(220px, 1fr));
+        gap: 16px;
+        padding: 16px;
+      }
+}
