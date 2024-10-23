@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from '../assets/logo.png'
 import { useAuth } from "../context/GlobalAuthContext";
 import '../styles/header.css'
@@ -6,14 +6,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 export default function Header() {
-    const location = useLocation(); //  the current route location
     const { isLoggedIn, logout } = useAuth(); // Use the auth context
 
-    // Determine the css class name based on the current path. important for showing home page differently
-    const headerClass = location.pathname === "/" ? 'Home-page-header' : 'header';
-
     return (
-        <nav className={headerClass}>
+        <nav className="nav-bar">
             <div className="logo-container">
                 <NavLink to="/">
                     <img src={logo} className="logo" alt="Logo" />
