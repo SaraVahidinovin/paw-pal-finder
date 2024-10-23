@@ -2,7 +2,6 @@ import { useState } from "react"
 import { useNavigate } from 'react-router-dom';
 import '../styles/login.css'
 import { useAuth } from "../context/GlobalAuthContext";
-import Header from "../components/Header";
 import bannerBackground from '../assets/bannerBackground.svg';
 import dogWearingSunglasses from '../assets/dog-wearing-sunglasses.svg';
 
