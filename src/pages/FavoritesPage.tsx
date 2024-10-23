@@ -24,24 +24,18 @@ export default function FavoritesPage() {
                 <Header />
             </section>
             <h1>Dogs You've Fallen For</h1>
-            <section className="card-container">
                 {/* Check if there are any favorite dogs */}
-                {displayedFavorites.length > 0 ?
-                    // If there are favorites, map over the array and display each as a ProductCard component
-                    (displayedFavorites.map((dog) => (
-                        <section key={dog.id} className="favorite-item">
-                            <ProductCard dog={dog} />
-                        </section>
-                    ))
-                    ) : (
-                        // If no favorites are found, display a message to the user
-                        <section className="not-found-container">
-                        <h3>No favorite dog found.
-                        </h3>
-                        </section>
-                    )
-                }
-            </section>
+                {displayedFavorites.length === 0 ? (
+                    <p>You have not added any favorites yet.</p>
+                ) : (
+                    <section className="card-container">
+                        {displayedFavorites.map((dog) => (
+                            <section key={dog.id} className="favorite-item">
+                                <ProductCard dog={dog} />
+                            </section>
+                        ))}
+                    </section>
+                )}
             <Pagination dataSource={favorites} />
         </section>
     )
