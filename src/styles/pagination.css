@@ -2,37 +2,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.02rem;
+    gap: 0.1rem;
     margin: 1rem 0;
 }
 
 .pagination button {
-    background-color: transparent;
-    color: #333;
+    background-color: #333;
+    color: white;
     border: none;
     padding: 0.3rem 0.5rem;
     cursor: pointer;
     transition: color 0.3s ease, background-color 0.3s ease;
+    margin: 0 0.2rem;
+    border-radius: 5px;
+}
+
+.page-indicator {
+    color: #333 ;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 .pagination button:disabled {
     display: none;
 }
 
-.pagination button.active {
-    background-color: #222;
-    color: white;
-    border-radius: 5px;
+.pagination button:hover {
+    background-color: #777;
 }
-
-.pagination button:not(.active) {
-    background-color: #f1f1f1;
-    color: #333;
-    border-radius: 5px;
-    margin: 0 5px;
-}
-
-.pagination button:not(.active):hover {
-    background-color: #e0e0e0;
-}
-

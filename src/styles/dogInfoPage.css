@@ -104,3 +104,19 @@ h2{
         margin-top: 0;
     }
 }
+
+@media (max-width: 1024px) {
+
+.dog-card{
+        .dog-info {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 2fr;
+        }
+
+        .info-sections {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            padding-right: 0;
+        }
+    }
+}

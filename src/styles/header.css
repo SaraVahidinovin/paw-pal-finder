@@ -63,3 +63,20 @@ nav {
     }
 }
 
+@media (max-width: 1024px) {
+    nav {
+        flex-direction: column;
+    }
+    .logo {
+        height: 2rem;
+    }
+    .menu-container {
+        a {
+            font-size: 0.8rem;
+         }
+    
+        .logout-button {
+            font-size: 1rem;
+        }
+    }
+}

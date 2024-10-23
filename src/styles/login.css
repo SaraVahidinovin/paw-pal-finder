@@ -111,7 +111,7 @@ form {
 #error-msg {
     color: red;
     text-align: center;
-    margin: 0.5rem;
+    margin: 0.2rem;
 }
 
 p {
@@ -187,4 +187,24 @@ p a:hover {
     input {
         padding:0.5rem ;
     }
+}
+
+@media (max-width: 1024px) {
+
+    .form-container {
+        width: 100%;
+    }
+
+    .login-banner {
+        display: none;
+    }
+
+    #registration-form {
+        padding: 0;
+
+        input {
+            padding: 0.2rem;
+        }
+    }
+
 }

@@ -184,3 +184,25 @@
         margin-top: 0;
     }
 }
+
+@media (max-width: 1024px) {
+
+    .add-dog-form,
+    .edit-dog-form {
+        .dog-info {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 2fr;
+        }
+
+        .info-sections {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            padding-right: 0;
+        }
+
+        button {
+            align-self: center;
+            margin-right: 0;
+        }
+    }
+}

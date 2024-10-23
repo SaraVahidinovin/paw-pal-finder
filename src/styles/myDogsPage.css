@@ -31,3 +31,17 @@
         font-size: 1.5rem;
     }
 }
+
+@media (max-width: 1024px) {
+    .my-dogs-content {
+        .card-container {
+            grid-template-columns: 1fr;
+        }
+
+        .add-button {
+            margin-left: 0;
+            align-self: center;
+        }
+    }
+
+}

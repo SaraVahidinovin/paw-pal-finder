@@ -9,8 +9,28 @@ h1 {
 .favorites-container {
     .card-container {
         display: grid;
-        grid-template-columns: repeat(5, minmax(220px, 1fr));
+        grid-template-columns: repeat(4, minmax(220px, 1fr));
         gap: 16px;
         padding: 16px;
+        margin-left: 2rem;
+        margin-right: 2rem;
       }
+
+      .favorite-item {
+        margin: auto;
+    }
+
+    p{
+        font-family: 'Sansita', sans-serif;
+        font-size: 1.5rem;
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .favorites-container {
+        .card-container {
+            grid-template-columns: 1fr;
+        }
+    }
 }
