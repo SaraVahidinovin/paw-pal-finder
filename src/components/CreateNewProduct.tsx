@@ -46,7 +46,7 @@ const DogForm = ({ mode }: DogFormProps) => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
+        
         if (mode === 'create') {
             // Create new dog logic
             if (!isLoggedIn || !loggedInUser) {
@@ -130,8 +130,8 @@ const DogForm = ({ mode }: DogFormProps) => {
     };
 
     // Trigger file input when the icon is clicked
-    const handleIconClick = (e: React.ChangeEvent<HTMLInputElement>) => {
-        e.stopPropagation()
+    const handleIconClick = (e: React.MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation(); 
         if (fileInputRef.current) {
             fileInputRef.current.click();
         }
@@ -148,7 +148,6 @@ const DogForm = ({ mode }: DogFormProps) => {
                         ref={fileInputRef}
                         onChange={handleFileChange}
                         style={{ display: 'none' }}
-                        required
                     />
                     {/* Image preview or upload icon */}
                     <div className="image-preview" onClick={handleIconClick}>
@@ -190,7 +189,7 @@ const DogForm = ({ mode }: DogFormProps) => {
                             </select>
                         </div>
                         <div className="info-item">
-                            <p className="label"><strong>Age:</strong></p>
+                            <p className="label"><strong>Age:(months)</strong></p>
                             <input type="number" name="age" value={formData.age} onChange={handleChange} required />
                         </div>
                         <div className="info-item">
