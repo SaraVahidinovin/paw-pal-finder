@@ -5,21 +5,13 @@ import Header from '../components/Header';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import '../styles/myDogsPage.css'
-import { useContext } from 'react';
-import GlobalStateContext from '../context/GlobalStateContext';
-import Pagination from '../components/Pagination';
 
 export default function MyDogsPage() {
     const dogs = useLoaderData() as Dog[];
     const loggedInUser = localStorage.getItem('loggedInUser');
 
-    const { currentPage, itemsPerPage, setCurrentPage } = useContext(GlobalStateContext);
-
     // Filter the dogs to show only the ones added by the logged-in user
     const userDogs = dogs.filter((dog: Dog) => dog.addedBy === loggedInUser);
-
-     // Calculate the displayed userDogs based on the current page
-     const displayedUserDogs = userDogs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
     const navigate = useNavigate();
 
@@ -38,10 +30,9 @@ export default function MyDogsPage() {
             <button onClick={handleNavigation} title='Add a new dog' className='add-button'>
                 <FontAwesomeIcon icon={faPlus} />
             </button>
-            {displayedUserDogs.length === 0 ? (
+            {userDogs.length === 0 ? (
                 <p>You have not added any dogs yet.</p>
             ) : (
-                <>
                 <section className="card-container">
                     {userDogs.map(dog => (
                         <ProductCard 
@@ -51,8 +42,6 @@ export default function MyDogsPage() {
                         />
                     ))}
                 </section>
-                <Pagination dataSource={userDogs} />
-                </>
             )}
         </section>
     </section>
