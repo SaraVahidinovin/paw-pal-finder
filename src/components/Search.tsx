@@ -3,8 +3,8 @@ import { Range } from 'react-range';
 import GlobalStateContext from '../context/GlobalStateContext';
 import '../styles/search.css';
 
-const MIN = 0;
-const MAX = 20;
+const MIN = 1;
+const MAX = 240;
 
 export default function SearchComponent() {
   const { dogs, setSearchResults} = useContext(GlobalStateContext);
@@ -54,7 +54,7 @@ export default function SearchComponent() {
         <option value="Female">Female</option>
       </select>
       <div className="range-slider">
-        <label>Age range</label>
+        <label>Age range(months)</label>
         <div className="slider-values">
           <span>{ageRange[0]}</span> - <span>{ageRange[1]}</span>
         </div>
