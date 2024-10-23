@@ -7,6 +7,9 @@ const Pagination = ({ dataSource }: { dataSource: any[] }) => {
 
     const totalPages = Math.ceil(dataSource.length / itemsPerPage);
 
+    // Don't render the pagination if there are no pages
+    if (totalPages === 0) return null;
+
     const goToPage = (page: number) => {
         if (page >= 1 && page <= totalPages) {
             setCurrentPage(page);
@@ -18,12 +21,10 @@ const Pagination = ({ dataSource }: { dataSource: any[] }) => {
             <button onClick={() => goToPage(1)} disabled={currentPage === 1}>First</button>
             <button onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 1}>Previous</button>
 
-            {[...Array(totalPages)].map((_, i) => (
-                <button key={i} onClick={() => goToPage(i + 1)} className={currentPage === i + 1 ? 'active' : ''}>
-                    {i + 1}
-                </button>
-            ))}
-
+            <span className="page-indicator">
+                {currentPage} of {totalPages}
+            </span>
+            
             <button onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages}>Next</button>
             <button onClick={() => goToPage(totalPages)} disabled={currentPage === totalPages}>Last</button>
         </div>
