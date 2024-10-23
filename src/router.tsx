@@ -10,7 +10,6 @@ import FavoritesPage from "./pages/FavoritesPage";
 import DogInfoPage from "./pages/DogInfoPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
-import NotFoundPage from "./pages/NotFoundPage";
 import { dogsLoader } from "./loader/loader";
 
 export const router = createBrowserRouter(
@@ -27,7 +26,6 @@ export const router = createBrowserRouter(
            <Route path='dogInfo/:chipNumber' element={<DogInfoPage />} />
            <Route path='about' element={<AboutPage />} />
            <Route path='contact' element={<ContactPage />} />
-           <Route path='*' element={<NotFoundPage />} />
         </Route>
     )
 );
